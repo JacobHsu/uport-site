@@ -1,14 +1,42 @@
-import React from 'react';
+import React from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
+import { showAppDownload } from "../../selectors";
+import * as theme from "../shared/theme";
+import { Container, medium } from "../shared/grid";
 import Header from "./Header";
+
+// import AppDownload from "./AppDownloadContainer";
+import { SERVICES } from "../../constants/config";
 
 class Home extends React.Component {
   render() {
-    return (
+    const { showAppDownload } = this.props;
+    return (<Wrapper extraPadding={showAppDownload}>
       <Header />
-    )
+
+      {/* <AppDownload /> */}
+    </Wrapper>)
   }
 }
 
-export default connect()(Home);
+const Wrapper = styled.div`
+  ${props => props.extraPadding
+    ? `padding-bottom: 6rem;`
+    : ""}
+`;
+const Cards = styled.div`
+  background: ${theme.gradient1};
+
+  ${Container} {
+    padding: 1px 20px 30px;
+    ${medium("padding: 1px 0 40px;")}
+  }
+`;
+
+const mapStateToProps = state => ({
+  showAppDownload: showAppDownload(state)
+});
+
+export default connect(mapStateToProps)(Home);

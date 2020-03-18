@@ -26,4 +26,11 @@ Redux - Saga 在 Redux 中是以 Middleware （中間件）存在的
 
 ## shared\elements.js
 
-`yarn add styled-components shortid react-i18next`
+`yarn add styled-components shortid react-i18next i18next i18next-browser-languagedetector`
+
+## module.hot
+
+site\src\index.js  
+[模块热替换](http://webpack.docschina.org/api/hot-module-replacement/)  
+
+> React Hook "useTranslation" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
