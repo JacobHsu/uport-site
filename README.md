@@ -12,4 +12,4 @@
 
 ## frontend
 
-`npx create-react-app uPortlandia`
+`npx create-react-app site`
