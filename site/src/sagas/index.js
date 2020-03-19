@@ -5,8 +5,7 @@ import pollChasqui from "./pollChasqui";
 import redirects from "./redirects";
 
 export default function* () {
-    yield spawn(credentials);
-    yield spawn(pollChasqui);
-    yield spawn(redirects);
+  yield spawn(credentials);
+  yield spawn(pollChasqui);
+  yield spawn(redirects);
 }
-  
