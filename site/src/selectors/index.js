@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 
-export const isLoading = state => Boolean(state.loading.length);
+export const isLoading = state => !state.loading ? false: Boolean(state.loading.length);
 export const getUPortMessages = state => state.uportMessages;
 export const getUPortLogin = state => state.uportLogin;
 export const getUPortProfile = createSelector(getUPortLogin, login => login.profile);

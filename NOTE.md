@@ -34,3 +34,11 @@ site\src\index.js
 [模块热替换](http://webpack.docschina.org/api/hot-module-replacement/)  
 
 > React Hook "useTranslation" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+###　src\components\App.js
+
+npm [qs](https://www.npmjs.com/package/qs) 是一個增加了一些安全性的查詢字符串解析和序列化字符串的庫。
+
+### src\utils\createCallbackUrl.js
+
+npm mobile-detect
