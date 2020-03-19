@@ -6,7 +6,7 @@ import { showAppDownload } from "../../selectors";
 import * as theme from "../shared/theme";
 import { Container, medium } from "../shared/grid";
 import Header from "./Header";
-
+import Card from "../shared/ServiceCard";
 // import AppDownload from "./AppDownloadContainer";
 import { SERVICES } from "../../constants/config";
 
@@ -15,7 +15,20 @@ class Home extends React.Component {
     const { showAppDownload } = this.props;
     return (<Wrapper extraPadding={showAppDownload}>
       <Header />
-
+      <Cards>
+        <Container>
+          {Object.keys(SERVICES).map(sid => <Card key={sid}
+            name={SERVICES[sid].displayName}
+            icon={SERVICES[sid].icon}
+            superText={SERVICES[sid].entity}
+            description={SERVICES[sid].description}
+            shareClaims={SERVICES[sid].requiredClaims}
+            shareServices={SERVICES[sid].requiredServices}
+            receiveClaims={SERVICES[sid].generatedClaims}
+            url={SERVICES[sid].url}
+            colors={theme.colors[sid]} />)}
+        </Container>
+      </Cards>
       {/* <AppDownload /> */}
     </Wrapper>)
   }
